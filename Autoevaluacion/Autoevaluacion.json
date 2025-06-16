@@ -1,0 +1,211 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Simple Inventory API",
+    "description": "This is a simple API",
+    "contact": {
+      "email": "you@your-company.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/ricaldone-488/Autoevaluacion/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "tags": [
+    {
+      "name": "admins",
+      "description": "Secured Admin-only calls"
+    },
+    {
+      "name": "developers",
+      "description": "Operations available to regular developers"
+    }
+  ],
+  "paths": {
+    "/tasks": {
+      "get": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Get a Tasks",
+        "description": "Manda a llamar las tasks de la tabla",
+        "operationId": "get-api-tasks",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Update a Tasks",
+        "description": "Actualiza los campos de un dato seleccionado",
+        "operationId": "put-tasks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tasks_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Insert a Tasks",
+        "description": "Inserta las tasks ingresadas",
+        "operationId": "post-tasks",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tasks_body_1"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Delete a Tasks",
+        "description": "Elimina los datos de un insert seleccionado",
+        "operationId": "delete-tasks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "tasks": {
+        "title": "tasks",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "o65z7gfbjq0rt"
+            }
+          },
+          "completed": {
+            "type": "boolean",
+            "default": true,
+            "x-stoplight": {
+              "id": "wexujwb84c69d"
+            }
+          }
+        }
+      },
+      "tasks_body": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "tw2ytx85vo7qf"
+            }
+          },
+          "description": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "cohywmrrq0x2s"
+            }
+          },
+          "completed": {
+            "type": "boolean",
+            "default": true,
+            "x-stoplight": {
+              "id": "uuwn1oyr6sx2c"
+            }
+          }
+        }
+      },
+      "tasks_body_1": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "pgrz3jri768ki"
+            }
+          },
+          "description": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "axtgskvmyd657"
+            }
+          },
+          "completed": {
+            "type": "boolean",
+            "default": true,
+            "x-stoplight": {
+              "id": "w4qb9qouee234"
+            }
+          }
+        }
+      }
+    }
+  }
+}

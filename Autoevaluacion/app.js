@@ -28,7 +28,7 @@ app.use(cookieParser());
 //Traemos el archivo json 
 const swaggerDocument = JSON.parse(
   fs.readFileSync(
-    path.resolve("./documentacion.json"),
+    path.resolve("./Autoevaluacion.json"),
     "utf-8"
   )
 )

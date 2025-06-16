@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Simple Inventory API",
-    "description": "This is a simple API",
+    "title": "Autoevaluacion",
+    "description": "Api de mi Autoevaluacion",
     "contact": {
       "email": "you@your-company.com"
     },
@@ -16,16 +16,6 @@
     {
       "url": "https://virtserver.swaggerhub.com/ricaldone-488/Autoevaluacion/1.0.0",
       "description": "SwaggerHub API Auto Mocking"
-    }
-  ],
-  "tags": [
-    {
-      "name": "admins",
-      "description": "Secured Admin-only calls"
-    },
-    {
-      "name": "developers",
-      "description": "Operations available to regular developers"
     }
   ],
   "paths": {
